@@ -1,0 +1,29 @@
+I will write my notes on my learning about computer vision for self driving cars here
+
+Perception
+
+Road Segmentation - Convulated Neural Network
+
+- given input = find road present in image
+- obvisouly dont want to hard code b/c that would only work on one image
+- fully convuly nerual netowrk
+  - fully end to end
+  - no pre processing or post processing on image
+- road image -> fcn model -> binary image (1 for road, 0 for not road)
+- upsampling : decide on what values to be on NxN squares
+  - bed of nails : assign all original image block value to upsample block values 
+    - simple and make a lot of zeroes
+  - nearest neighbor
+  - interpolation
+    - assigning values of blocks through averages
+    - take average between the nearest neighbors of blocks
+  - transposed convulations
+    - assign values based on filter
+      - random weight values
+    - backpropagation
+
+  
+
+2D Object Detection - YOLO
+
+
