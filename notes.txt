@@ -22,7 +22,8 @@ Road Segmentation - Convulated Neural Network
       - random weight values
     - backpropagation
 
-  
+- mask background with binary values and bitwise and 
+
 
 2D Object Detection - YOLO
 
