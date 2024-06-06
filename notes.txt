@@ -26,7 +26,14 @@ Road Segmentation - Convulated Neural Network
 
 Perceptron
 - most basic form of NN 
+- random data to start, find error and slowly move to lower the error 
+  - correctly classified points get very small penalties
+  - wrong classifications are high penalties
 - input nodes::linear function::score::0 or 1::output
+  - discrete values
+    - we can show continous probabilties with activation function 
+      - using Sigmoid function
+      - gives percentage like 0.57 instead of 0 or 1
 - each input is multiplied by their respective weights
 - supervised = labeled data
 - unsupervised = unlalbeled data 
