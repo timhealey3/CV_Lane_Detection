@@ -24,6 +24,22 @@ Road Segmentation - Convulated Neural Network
 
 - mask background with binary values and bitwise and 
 
+Perceptron
+- most basic form of NN 
+- input nodes::linear function::score::0 or 1::output
+- each input is multiplied by their respective weights
+- supervised = labeled data
+- unsupervised = unlalbeled data 
+- linear regression - Supervised learning 
+  - response variable
+  - explanatory (independent) variable
+  - looking to find a linear relationship
+- classification
+  - takes input and classifies it 
+    - generally calculates possibility it is a classification
+  - could be used if something is a car/person/sign
+  - seperates into discreete classes 
+  -    
 
 2D Object Detection - YOLO
 
