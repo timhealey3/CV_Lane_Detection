@@ -41,6 +41,17 @@ Perceptron
   - response variable
   - explanatory (independent) variable
   - looking to find a linear relationship
+- bigger cross entropy score is bad 
+- smalled the cross entroy score the better
+- calculates the error
+- gradient descent = minimize the error 
+- gradient is derivative with respect to weights
+- calculate error function, subtract gradient, reducing error 
+- derivative gradient = (points * (probabilties - label)) / # of points 
+- subtracting value from linear parameters results new weights
+  - which has a smaller error function 
+  - very small steps
+  - small value down = learning rate like 0.01 
 - classification
   - takes input and classifies it 
     - generally calculates possibility it is a classification
