@@ -20,7 +20,10 @@ plt.scatter(X[n_pts:,0], X[n_pts:,1])
 
 model = Sequential()
 model.add(Dense(units = 1, input_shape=(2,), activation='sigmoid'))
-adam  Adam(lr = 0.1)
+adam = Adam(learning_rate = 0.1)
+# use adam and binary cross entropy. for two different classes
 model.compile(adam, loss='binary_crossentropy', metrics=['accuracy'])
-model.fit(x=X, y=Y)
-# plt.plot(h.hisotry['accuracy']
+# label model
+# shuffle, shuffles the data before each epoch to help fight against gettincaught in local min.
+h = model.fit(x=X, y=y, verbose=1, batch_size=50, epochs = 500, shuffle='true')
+
