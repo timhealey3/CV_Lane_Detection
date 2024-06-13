@@ -52,6 +52,10 @@ Perceptron
   - which has a smaller error function 
   - very small steps
   - small value down = learning rate like 0.01 
+- back propagation
+  - initially start at random weights
+  - error function updates weights and bias
+  - get better model
 - classification
   - takes input and classifies it 
     - generally calculates possibility it is a classification
@@ -60,5 +64,27 @@ Perceptron
   -    
 
 2D Object Detection - YOLO
+
+Deep Learning: 
+- remeber weights can affect scores dispaportionally
+- several perceptrons layered on top of each other
+- feed forward process 
+- hidden layer = set of linear models
+- more hidden layers, deeper the NN gets 
+  - hence name deep neural network 
+- datas trend is not straightforward so need many layers 
+- can use mix of non linear and linear models
+- output layer
+- how does NN know how much weights and bias to use?
+  - gradient descent optimization models
+  - feed forward: core of many important NNs like CNN 
+    - no feedback loops
+    - CORE ideas of feed forward
+      - input layer -> hidden layer(s) -> output layer -> output 
+      - num hidden layer is called depth
+      - output layer makes predictions based on activation functions
+        - most popular activiation function is ReLU 
+    - matrix of weights -> matrix scores (take sigmoid) -> matrix probabilites -> multiple by matrix of weights -> matrix score (sigmoid) -> final output of probability
+    -  
 
 
