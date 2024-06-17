@@ -85,6 +85,13 @@ Deep Learning:
       - output layer makes predictions based on activation functions
         - most popular activiation function is ReLU 
     - matrix of weights -> matrix scores (take sigmoid) -> matrix probabilites -> multiple by matrix of weights -> matrix score (sigmoid) -> final output of probability
-    -  
-
-
+    - gradient descent -> updating weights for all models in NN -> backpropagation
+    - to train a NN we need to minimize the error function
+    - the error function is the cross entropy. High CE is bad, low CE is good
+    - feedforward to predict all outputs -> total error with cross entropy -> backpropagation -> repeat at some learning rate
+  
+  backpropagation
+  - reverse of feedforward 
+  - gradient is derivative of error function 
+    - use gradient of total error function and backprogate it in reverse feedforward operation to update the weights. Do this over and over iteratively, over some learning rate until model classifies our data correctly
+  - 
