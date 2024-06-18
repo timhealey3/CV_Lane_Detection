@@ -11,7 +11,7 @@ Road Segmentation - Convulated Neural Network
   - no pre processing or post processing on image
 - road image -> fcn model -> binary image (1 for road, 0 for not road)
 - upsampling : decide on what values to be on NxN squares
-  - bed of nails : assign all original image block value to upsample block values 
+  - bed of nails : assign all original image block value to upsample block values
     - simple and make a lot of zeroes
   - nearest neighbor
   - interpolation
@@ -22,76 +22,95 @@ Road Segmentation - Convulated Neural Network
       - random weight values
     - backpropagation
 
-- mask background with binary values and bitwise and 
+- mask background with binary values and bitwise and
 
 Perceptron
-- most basic form of NN 
-- random data to start, find error and slowly move to lower the error 
+- most basic form of NN
+- random data to start, find error and slowly move to lower the error
   - correctly classified points get very small penalties
   - wrong classifications are high penalties
 - input nodes::linear function::score::0 or 1::output
   - discrete values
-    - we can show continous probabilties with activation function 
+    - we can show continous probabilties with activation function
       - using Sigmoid function
       - gives percentage like 0.57 instead of 0 or 1
 - each input is multiplied by their respective weights
 - supervised = labeled data
-- unsupervised = unlalbeled data 
-- linear regression - Supervised learning 
+- unsupervised = unlalbeled data
+- linear regression - Supervised learning
   - response variable
   - explanatory (independent) variable
   - looking to find a linear relationship
-- bigger cross entropy score is bad 
+- bigger cross entropy score is bad
 - smalled the cross entroy score the better
 - calculates the error
-- gradient descent = minimize the error 
+- gradient descent = minimize the error
 - gradient is derivative with respect to weights
-- calculate error function, subtract gradient, reducing error 
-- derivative gradient = (points * (probabilties - label)) / # of points 
+- calculate error function, subtract gradient, reducing error
+- derivative gradient = (points * (probabilties - label)) / # of points
 - subtracting value from linear parameters results new weights
-  - which has a smaller error function 
+  - which has a smaller error function
   - very small steps
-  - small value down = learning rate like 0.01 
+  - small value down = learning rate like 0.01
 - back propagation
   - initially start at random weights
   - error function updates weights and bias
   - get better model
 - classification
-  - takes input and classifies it 
+  - takes input and classifies it
     - generally calculates possibility it is a classification
   - could be used if something is a car/person/sign
-  - seperates into discreete classes 
-  -    
+  - seperates into discreete classes
+  -
 
 2D Object Detection - YOLO
 
-Deep Learning: 
+Deep Learning:
 - remeber weights can affect scores dispaportionally
 - several perceptrons layered on top of each other
-- feed forward process 
+- feed forward process
 - hidden layer = set of linear models
-- more hidden layers, deeper the NN gets 
-  - hence name deep neural network 
-- datas trend is not straightforward so need many layers 
+- more hidden layers, deeper the NN gets
+  - hence name deep neural network
+- datas trend is not straightforward so need many layers
 - can use mix of non linear and linear models
 - output layer
 - how does NN know how much weights and bias to use?
   - gradient descent optimization models
-  - feed forward: core of many important NNs like CNN 
+  - feed forward: core of many important NNs like CNN
     - no feedback loops
     - CORE ideas of feed forward
-      - input layer -> hidden layer(s) -> output layer -> output 
+      - input layer -> hidden layer(s) -> output layer -> output
       - num hidden layer is called depth
       - output layer makes predictions based on activation functions
-        - most popular activiation function is ReLU 
+        - most popular activiation function is ReLU
     - matrix of weights -> matrix scores (take sigmoid) -> matrix probabilites -> multiple by matrix of weights -> matrix score (sigmoid) -> final output of probability
     - gradient descent -> updating weights for all models in NN -> backpropagation
     - to train a NN we need to minimize the error function
     - the error function is the cross entropy. High CE is bad, low CE is good
     - feedforward to predict all outputs -> total error with cross entropy -> backpropagation -> repeat at some learning rate
-  
+
   backpropagation
-  - reverse of feedforward 
-  - gradient is derivative of error function 
+  - reverse of feedforward
+  - gradient is derivative of error function
     - use gradient of total error function and backprogate it in reverse feedforward operation to update the weights. Do this over and over iteratively, over some learning rate until model classifies our data correctly
-  - 
+  -
+Multiclass Classification
+    - Softmax
+        - multiclass datasets (not just 0 or 1, more than 2 data classes)
+        - sigmoid function works for binary b/c it ranges in values between 0 and 1
+            - we will use the softmax function instead
+        - returns some score for each classification type
+            - need to convert to probability (need relative magnitude)
+            - all proabilities need to add up to one (.1 + .8 + .1)
+            - Softmax activation works for this
+                - some score m for e^m / e^m + e^m + e^m for all scores
+                - softmax is applied to the final (output) layer
+        - feedforward for classification is simikar to binary classification
+        - encode the data class with a value in a column
+        - larger the cross entropy larger the error
+        - categorical cross entropy
+            - convert probabilities into variables
+            - use cross entropy equation to get probabilities
+            - then use gradient descent to minimize error obtained
+                - gradient descent / backpropagation is relatively same from binary to classification
