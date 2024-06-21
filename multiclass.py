@@ -24,3 +24,9 @@ model.fit(x=X, y=y_cat, verbose=1, batch_size=50, epochs=100)
 
 # plotting
 # plot decision boundary here
+
+# predict classification by plotting some points
+x, y = 0.5, 0.5
+point = np.array([x,y])
+prediction = model.predict_classes(point)
+print(f"Prediction: {prediction}")
