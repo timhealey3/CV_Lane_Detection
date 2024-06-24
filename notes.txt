@@ -114,3 +114,17 @@ Multiclass Classification
             - use cross entropy equation to get probabilities
             - then use gradient descent to minimize error obtained
                 - gradient descent / backpropagation is relatively same from binary to classification
+    - underfitting
+        - using too simple of a model to fit the training data
+        - small training error
+    - overfitting
+        - too rigid of a model to generalize new data
+        - well on training data but worse on test data
+    - regularization
+        - aim to reduce generalization error
+    - hyperparameters
+        - learning rate
+        - number of nodes per layer
+        - number of layers 
+        - etc etc
+    - 
